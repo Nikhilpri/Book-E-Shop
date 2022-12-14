@@ -1,0 +1,101 @@
+﻿@model IEnumerable<PrimaryKeyIntTest.Models.Book>
+
+@{
+    ViewBag.Title = "Archive";
+}
+
+<h2>Archive</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.BookDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discounts)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Archived)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.BookDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discounts)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Archived)
+            </td>
+
+            <td>
+                @if(item.Archived == false){
+                    @Html.ActionLink("Archive", "ConfirmArchive", new { id = item.BookId }, new { @class = "btn btn-primary", @style = "color:white" })
+                }
+                @* @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>

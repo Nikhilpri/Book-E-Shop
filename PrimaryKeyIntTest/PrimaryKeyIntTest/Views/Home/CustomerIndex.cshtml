@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PrimaryKeyIntTest.Models.Book>
+@{
+    ViewBag.Title = "CustomerIndex";
+}
+
+<h2>Hello Customer !</h2>
+
+<hr />
+<div class="menuAdmin">
+    <h2>Search Books</h2>
+
+
+    <label>Basic Search</label>
+    <input type="radio" id='rb1' name="q1group" value="Search By Book Name or Author Name" class='q1'>
+    <label>Advanced Search</label>
+    <input type="radio" id='rb2' name="q1group" value="Search Using Book Category or Year or Keyword Search" class='q1'>
+    <br>
+    <div class="answer" style="font-weight:bolder">
+    </div>
+    @using (Html.BeginForm("FetchBooks", "Books", FormMethod.Post))
+    {
+        <br />
+        @Html.TextBox("query", null, new { @class = "form-control", @placeholder = "Enter Keyword" })
+
+        <input type="submit" value="Search" />
+        <input type="reset" name="Reset" value="Reset" />
+    }
+<br />
+<br />
+    @Html.ActionLink("View Cart", "ViewCart","Carts", null, new { @class = "btn" })
+
+</div>

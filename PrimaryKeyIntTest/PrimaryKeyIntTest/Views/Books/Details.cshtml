@@ -1,0 +1,106 @@
+﻿@model PrimaryKeyIntTest.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Option)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Option)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discounts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discounts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Archived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Archived)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
